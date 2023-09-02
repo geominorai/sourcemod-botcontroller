@@ -6,10 +6,10 @@
 #define __botcontroller_included
 
 
-native BotController_CreateBot( const String:botName[] );
+native BotController_CreateBot( const char[] botName );
 
 
-public Extension:__ext_botcontroller =
+public Extension __ext_botcontroller =
 {
 	name = "BotController",
 	file = "botcontroller.ext",
@@ -30,7 +30,7 @@ public Extension:__ext_botcontroller =
 
 
 #if !defined REQUIRE_EXTENSIONS
-public __ext_botcontroller_SetNTVOptional()
+public void __ext_botcontroller_SetNTVOptional()
 {
 	MarkNativeAsOptional( "BotController_CreateBot" );
 }
